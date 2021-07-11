@@ -1,15 +1,19 @@
-import { SidebarComponent } from './menu/sidebar/sidebar.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import * as jQuery from 'jquery';
+
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NoContentComponent } from './global/no-content/no-content.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { CarouselProductsComponent } from './products/carousel-products/carousel-products.component';
 import { ContentComponent } from './content/content.component';
-import { RouterModule, Routes } from '@angular/router';
-import { TopNavBarComponent } from './menu/top-nav-bar/top-nav-bar.component';
 import { FontAwesomeDirective } from 'ng2-fontawesome';
 import { Footer } from './global/footer/footer.component';
-import * as jQuery from 'jquery';
+import { NgModule } from '@angular/core';
+import { NoContentComponent } from './global/no-content/no-content.component';
+import { ProductsService } from './products/products.service';
+import { SidebarComponent } from './menu/sidebar/sidebar.component';
+import { SlideshowModule } from 'ng-simple-slideshow';
+import { TopNavBarComponent } from './menu/top-nav-bar/top-nav-bar.component';
 
 export const AppRoutes2: Routes = [
   { path: '', component: ContentComponent },
@@ -27,9 +31,13 @@ export const AppRoutes2: Routes = [
     TopNavBarComponent,
     FontAwesomeDirective,
     Footer,
+    CarouselProductsComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(AppRoutes2, { useHash: true })],
-  providers: [],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(AppRoutes2, { useHash: true }),
+    SlideshowModule],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
