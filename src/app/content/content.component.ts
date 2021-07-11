@@ -8,11 +8,13 @@ import { ProductsService } from './../products/products.service';
   templateUrl: './content.component.html'
 })
 export class ContentComponent {
-  mostVisited = []
+  mostVisited = [];
+  latestVisited = [];
   constructor(private productsService:ProductsService) { }
 
   ngOnInit() {
     this.mostVisited = this.productsService.getProductImagesUrl();
+    this.latestVisited = this.productsService.getProducts();
   }
 
 }

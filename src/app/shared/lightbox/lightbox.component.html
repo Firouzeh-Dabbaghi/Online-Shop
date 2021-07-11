@@ -1,0 +1,5 @@
+<div  *ngFor="let image of album; let i=index">
+  <img [src]="image.thumb" (click)="open(i)"  
+  class="col-md-3 responsive hover-shadow rounded img-fluid img-thumbnail" 
+  style="cursor: pointer; "/>
+</div>

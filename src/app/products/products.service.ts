@@ -34,4 +34,8 @@ export class ProductsService {
   getProductImagesUrl() {
     return this.products.map(x => x.imagePath);
   }
+
+  getProducts(){
+    return this.products;
+  }
 }

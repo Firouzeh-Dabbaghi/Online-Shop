@@ -28,6 +28,7 @@
     "jquery-flot": "^0.8.3",
     "ng-simple-slideshow": "^1.2.9",
     "ng2-fontawesome": "0.0.6",
+    "ngx-lightbox": "^2.4.1",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },

@@ -1,5 +1,3 @@
-import * as jQuery from 'jquery';
-
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -8,6 +6,8 @@ import { CarouselComponent } from './shared/carousel/carousel.component';
 import { ContentComponent } from './content/content.component';
 import { FontAwesomeDirective } from 'ng2-fontawesome';
 import { Footer } from './global/footer/footer.component';
+import { LightboxComponent } from './shared/lightbox/lightbox.component';
+import { LightboxModule } from 'ngx-lightbox';
 import { NgModule } from '@angular/core';
 import { NoContentComponent } from './global/no-content/no-content.component';
 import { ProductsService } from './products/products.service';
@@ -32,11 +32,13 @@ export const AppRoutes2: Routes = [
     FontAwesomeDirective,
     Footer,
     CarouselComponent,
+    LightboxComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(AppRoutes2, { useHash: true }),
-    SlideshowModule],
+    SlideshowModule,
+    LightboxModule ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
 })
