@@ -9,7 +9,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { TopNavBarComponent } from './menu/top-nav-bar/top-nav-bar.component';
 import { FontAwesomeDirective } from 'ng2-fontawesome';
 import { Footer } from './global/footer/footer.component';
-import { NetworkActivitiesComponent } from './content/network-activities/network-activities.component';
 import * as jQuery from 'jquery';
 
 export const AppRoutes2: Routes = [
@@ -28,7 +27,6 @@ export const AppRoutes2: Routes = [
     TopNavBarComponent,
     FontAwesomeDirective,
     Footer,
-    NetworkActivitiesComponent
   ],
   imports: [BrowserModule, RouterModule.forRoot(AppRoutes2, { useHash: true })],
   providers: [],
