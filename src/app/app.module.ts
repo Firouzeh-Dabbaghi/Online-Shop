@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { CarouselProductsComponent } from './products/carousel-products/carousel-products.component';
+import { CarouselComponent } from './shared/carousel/carousel.component';
 import { ContentComponent } from './content/content.component';
 import { FontAwesomeDirective } from 'ng2-fontawesome';
 import { Footer } from './global/footer/footer.component';
@@ -31,7 +31,7 @@ export const AppRoutes2: Routes = [
     TopNavBarComponent,
     FontAwesomeDirective,
     Footer,
-    CarouselProductsComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,17 +1,18 @@
 import * as jQuery from 'jquery';
 
 import { Component } from '@angular/core';
+import { ProductsService } from './../products/products.service';
 
 @Component({
   selector: 'content',
-  //styleUrls: ["../../styles.css"],
   templateUrl: './content.component.html'
 })
 export class ContentComponent {
-
-  constructor() {}
+  mostVisited = []
+  constructor(private productsService:ProductsService) { }
 
   ngOnInit() {
+    this.mostVisited = this.productsService.getProductImagesUrl();
   }
 
 }
