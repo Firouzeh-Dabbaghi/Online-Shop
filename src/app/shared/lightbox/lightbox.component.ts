@@ -14,15 +14,15 @@ export class LightboxComponent implements OnInit {
   album = [];
   constructor(private _lightbox: Lightbox) { }
 
-  ngOnInit() {    
+  ngOnInit() {
     this.productImages.forEach((PI: Product) => {
       const src = PI.imagePath;
       const caption = PI.name;
-      const thumb = PI.imagePath;
+      const description = PI.description;
       const album = {
         src: src,
         caption: caption,
-        thumb: thumb
+        description: description
       };
       this.album.push(album);
     });

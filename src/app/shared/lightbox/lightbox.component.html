@@ -1,5 +1,8 @@
-<div  *ngFor="let image of album; let i=index">
-  <img [src]="image.thumb" (click)="open(i)"  
-  class="col-md-3 responsive hover-shadow rounded img-fluid img-thumbnail" 
-  style="cursor: pointer; "/>
+<div class="card col-md-3" *ngFor="let image of album; let i=index">
+  <a href="#" class="btn btn-secondary">Add to basket</a>
+  <img [src]="image.src" alt="Avatar" style="width:100%">
+  <div class="container-text">
+    <h4><b>{{image.caption}}</b></h4>
+    <p>{{image.description}}</p>
+  </div>
 </div>
