@@ -5,6 +5,7 @@ import { ProductsService } from './../products/products.service';
 
 @Component({
   selector: 'content',
+  styleUrls:['./content.component.css'],
   templateUrl: './content.component.html'
 })
 export class ContentComponent {
