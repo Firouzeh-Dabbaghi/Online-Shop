@@ -33,6 +33,16 @@
               <li><a href="index2.html">All Products</a></li>
             </ul>
           </li>
+          <li>
+            <a id="userli" (click)="anchorClicked($event)">
+              <i class="fa fa-user"></i> User 
+              <span id="userchevron" class="fa fa-chevron-down"></span
+            ></a>
+            <ul class="nav child_menu">
+              <li><a routerLink="sign-up" routerLinkActive="active">Sign Up</a></li>
+              <li><a href="index2.html">Sign In</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
