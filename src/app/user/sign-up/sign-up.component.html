@@ -1,0 +1,102 @@
+<section>
+  <div class="container mt-5">
+    <div class="row" id="form-inputs" style="min-height: 960px;">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 mx-auto d-block">
+        <div class="card mb-3">
+          <div class="row no-gutters">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <img src="https://img.icons8.com/cotton/64/000000/groups--v1.png" class="mx-auto d-block">
+                <form (ngSubmit)="onAddUser(f)" #f="ngForm">
+                  <!-- Name -->
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-1">
+                        <i class="fa fa-user pt-3"></i>
+                      </div>
+                      <div class="col-md-11">
+                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0"
+                          placeholder="Name" required minLength="10" maxlength="100" ngModel #name="ngModel"
+                          name="name">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Family -->
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-1">
+                        <i class="fa fa-user pt-3"></i>
+                      </div>
+                      <div class="col-md-11">
+                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0"
+                          placeholder="Family" required minLength="10" maxlength="100" ngModel #family="ngModel"
+                          name="family">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Email -->
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-1">
+                        <i class="fa fa-envelope pt-3"></i>
+                      </div>
+                      <div class="col-md-11">
+                        <input type="email" class="form-control border-top-0 border-left-0 border-right-0"
+                          placeholder="Email" required maxlength="150" ngModel #email="ngModel" name="email">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- BirthDate  -->
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-1">
+                        <i class="fa fa-calendar  pt-3"></i>
+                      </div>
+                      <div class="col-md-11">
+                        <input type="date" class="form-control border-top-0 border-left-0 border-right-0"
+                          placeholder="Family" required minLength="10" maxlength="100" ngModel #family="ngModel"
+                          name="family">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- PostalCode -->
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-1">
+                        <i class="fa fa-barcode  pt-3"></i>
+                      </div>
+                      <div class="col-md-11">
+                        <input type="postalCode" class="form-control border-top-0 border-left-0 border-right-0"
+                          placeholder="postal Code" required>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Address -->
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-1">
+                        <i class="fa fa-map-marker pt-3"></i>
+                      </div>
+                      <div class="col-md-11">
+                        <textarea class="form-control border-top-0 border-left-0 border-right-0" name="address" 
+                         cols="30" rows="5" ngModel #address="ngModel" placeholder="address" required></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-danger">Sign Up</button>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
