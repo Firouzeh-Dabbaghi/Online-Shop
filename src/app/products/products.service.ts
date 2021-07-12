@@ -23,7 +23,7 @@ export class ProductsService {
       '€3.43'
     ),
     new Product(
-      ' wash-free flat ',
+      ' hand wash-free flat ',
       'Large size lazy hand wash-free flat mop with inner box',
       'https://sc04.alicdn.com/kf/H29cc7f2f1ed04c9983157d64a5386d9eM.jpg',
       '2021-01-04',
@@ -50,7 +50,7 @@ export class ProductsService {
       '€3.43'
     ),
     new Product(
-      ' wash-free flat ',
+      ' hand wash-free flat ',
       'Large size lazy hand wash-free flat mop with inner box',
       'https://sc04.alicdn.com/kf/H29cc7f2f1ed04c9983157d64a5386d9eM.jpg',
       '2021-01-04',
