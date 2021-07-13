@@ -91,10 +91,12 @@
                   </div>
 
                   <div class="text-center">
-                    <button *ngIf="mode===userMode.SignUp" type="submit" class="btn btn-danger"
-                      [disabled]="f.invalid">Sign Up</button>
-                    <button *ngIf="mode===userMode.Edit" type="submit" class="btn btn-danger"
-                      [disabled]="f.invalid">Edit</button>
+                    <div *ngIf="pageState != userMode.ReadOnly">
+                      <button type="submit" class="btn btn-danger" [disabled]="f.invalid">
+                        {{pageState == userMode.SignUp?'Sign Up':
+                        pageState == userMode.Edit?'Edit':''
+                        }}</button>
+                    </div>
                   </div>
 
                 </form>
