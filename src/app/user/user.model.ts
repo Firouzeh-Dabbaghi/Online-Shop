@@ -1,5 +1,6 @@
 export class User {
     constructor(
+        public id: number,
         public name: string,
         public family: string,
         public email: string,
@@ -8,4 +9,10 @@ export class User {
         public postalCode: string
     ) {
     }
+}
+
+export enum UserMode {
+    SignUp = 1,
+    ReadOnly = 2,
+    Edit = 3
 }
