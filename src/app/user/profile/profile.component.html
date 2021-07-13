@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <ul id="myTabs" class="nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
+      <li class="active"><a routerLink="show-info" data-toggle="tab">Show Info</a></li>
+      <li><a routerLink="edit-info" data-toggle="tab">Edit Info</a></li>
+      <li><a routerLink="orders" data-toggle="tab">Orders</a></li>
+      <li><a routerLink="sign-out" data-toggle="tab">Sign Out</a></li>
+    </ul>
+    <div class="tab-content" style="border-top: #338ecf solid 1px;">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
