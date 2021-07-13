@@ -11,7 +11,7 @@ export class User {
     }
 }
 
-export enum UserMode {
+export enum UserPageState {
     SignUp = 1,
     ReadOnly = 2,
     Edit = 3
