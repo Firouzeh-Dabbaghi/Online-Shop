@@ -8,11 +8,11 @@ import { UserComponent } from "./user/user.component";
 
 export const AppRoutes: Routes = [
   { path: '', component: ContentComponent },
-  { path: 'user', component: UserComponent },
+  { path: 'user/:pageState', component: UserComponent },
   {
     path: 'profile', component: ProfileComponent, children: [
-      { path: ':id', component: UserComponent },
-      { path: ':id/:edit', component: UserComponent },
+      { path: ':id/:pageState', component: UserComponent },
+      { path: ':id/:pageState', component: UserComponent },
       { path: ':id/log-out', component: UserComponent },
       { path: ':id/orders', component: UserComponent },
     ]
