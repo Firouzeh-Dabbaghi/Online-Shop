@@ -1,5 +1,7 @@
-import { Component } from "@angular/core";
 import * as $ from "jquery";
+
+import { Component } from "@angular/core";
+import { UserPageState } from './../../user/user.model';
 
 @Component({
   selector: "side-bar",
@@ -7,6 +9,7 @@ import * as $ from "jquery";
   templateUrl: "./sidebar.component.html"
 })
 export class SidebarComponent {
+  pageState = UserPageState;
   private $BODY;
   private $MENU_TOGGLE;
   private $SIDEBAR_MENU;
@@ -16,7 +19,7 @@ export class SidebarComponent {
   private $NAV_MENU;
   private $FOOTER;
 
-  constructor() {}
+  constructor() { }
 
   ngAfterViewInit(): void {
     // this.plot();
@@ -29,7 +32,7 @@ export class SidebarComponent {
 
     if ($li.is(".active")) {
       $li.removeClass("active active-sm");
-      $("ul:first", $li).slideUp(function() {});
+      $("ul:first", $li).slideUp(function () { });
     } else {
       // prevent closing menu if we are on child menu
       if (!$li.parent().is(".child_menu")) {
@@ -43,7 +46,7 @@ export class SidebarComponent {
 
       $li.addClass("active");
 
-      $("ul:first", $li).slideDown(function() {});
+      $("ul:first", $li).slideDown(function () { });
     }
   }
 
@@ -60,12 +63,12 @@ export class SidebarComponent {
     this.$FOOTER = $("footer");
 
     let $a = this.$SIDEBAR_MENU.find("a");
-    this.$SIDEBAR_MENU.find("a").on("click", function(ev) {
+    this.$SIDEBAR_MENU.find("a").on("click", function (ev) {
       let $li = $(this).parent();
 
       if ($li.is(".active")) {
         $li.removeClass("active active-sm");
-        $("ul:first", $li).slideUp(function() {
+        $("ul:first", $li).slideUp(function () {
           this.setContentHeight();
         });
       } else {
@@ -77,14 +80,14 @@ export class SidebarComponent {
 
         $li.addClass("active");
 
-        $("ul:first", $li).slideDown(function() {
+        $("ul:first", $li).slideDown(function () {
           this.setContentHeight();
         });
       }
     });
 
     // toggle small or large menu
-    this.$MENU_TOGGLE.on("click", function() {
+    this.$MENU_TOGGLE.on("click", function () {
       if (this.$BODY.hasClass("nav-md")) {
         this.$SIDEBAR_MENU.find("li.active ul").hide();
         this.$SIDEBAR_MENU

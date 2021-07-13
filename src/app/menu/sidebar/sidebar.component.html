@@ -12,7 +12,7 @@
       </div>
       <div class="profile_info">
         <span>Welcome,</span>
-        <h2>John Doe</h2>
+        <h2>Firouzeh Dabbaghi</h2>
       </div>
     </div>
     <!-- /menu profile quick info -->
@@ -25,9 +25,8 @@
         <h3>General</h3>
         <ul class="nav side-menu">
           <li>
-            <a id="homeli" (click)="anchorClicked($event)"
-              ><i class="fa fa-home"></i> Products <span id="homechevron" class="fa fa-chevron-down"></span
-            ></a>
+            <a id="homeli" (click)="anchorClicked($event)"><i class="fa fa-home"></i> Products <span id="homechevron"
+                class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
               <li><a routerLink="" routerLinkActive="active">Latest Products</a></li>
               <li><a href="index2.html">All Products</a></li>
@@ -35,12 +34,11 @@
           </li>
           <li>
             <a id="userli" (click)="anchorClicked($event)">
-              <i class="fa fa-user"></i> User 
-              <span id="userchevron" class="fa fa-chevron-down"></span
-            ></a>
+              <i class="fa fa-user"></i> User
+              <span id="userchevron" class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li><a routerLink="user" routerLinkActive="active">Sign Up</a></li>
-              <li><a routerLink="profile/1" routerLinkActive="active">Profile</a></li>
+              <li><a [routerLink]="'user/'+pageState.SignUp" routerLink="user" routerLinkActive="active">Sign Up</a></li>
+              <li><a [routerLink]="'profile/1/'+pageState.ReadOnly" routerLinkActive="active">Profile</a></li>
               <li><a href="index2.html">Sign In</a></li>
             </ul>
           </li>
