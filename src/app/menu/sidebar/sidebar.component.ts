@@ -1,14 +1,16 @@
 import * as $ from "jquery";
 
-import { Component } from "@angular/core";
-import { UserPageState } from './../../user/user.model';
+import { Component, OnInit } from "@angular/core";
+import { User, UserPageState } from './../../user/user.model';
+
+import { UserService } from "src/app/user/user.service";
 
 @Component({
   selector: "side-bar",
-  // styleUrls: ["../../../styles.css"],
   templateUrl: "./sidebar.component.html"
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
+  //#region Design
   pageState = UserPageState;
   private $BODY;
   private $MENU_TOGGLE;
@@ -18,13 +20,20 @@ export class SidebarComponent {
   private $RIGHT_COL;
   private $NAV_MENU;
   private $FOOTER;
+  //#endregion
 
-  constructor() { }
+  currentUser: string;
 
-  ngAfterViewInit(): void {
-    // this.plot();
+  constructor(private userService: UserService) { }
+  ngOnInit(): void {
+
+    this.userService.currentUser
+      .subscribe((x: User) => {
+        this.currentUser = `${x.name} ${x.family}`
+      })
   }
 
+  //#region Design
   anchorClicked(event: MouseEvent) {
     let target = event.srcElement.id;
 
@@ -51,7 +60,6 @@ export class SidebarComponent {
   }
 
   plot() {
-    console.log("in sidebar");
 
     this.$BODY = $("body");
     this.$MENU_TOGGLE = $("#menu_toggle");
@@ -122,4 +130,5 @@ export class SidebarComponent {
 
     this.$RIGHT_COL.css("min-height", contentHeight);
   }
+  //#endregion
 }

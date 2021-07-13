@@ -6,13 +6,13 @@
     <div class="clearfix"></div>
 
     <!-- menu profile quick info -->
-    <div class="profile">
+    <div class="profile" *ngIf="currentUser">
       <div class="profile_pic">
         <img src="assets/img.jpg" alt="..." class="img-circle profile_img" />
       </div>
       <div class="profile_info">
         <span>Welcome,</span>
-        <h2>Firouzeh Dabbaghi</h2>
+        <h2>{{currentUser}}</h2>
       </div>
     </div>
     <!-- /menu profile quick info -->

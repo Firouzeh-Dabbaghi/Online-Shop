@@ -1,16 +1,29 @@
 import * as $ from "jquery";
 
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { User, UserPageState } from './../../user/user.model';
+
+import { UserService } from './../../user/user.service';
 
 @Component({
   selector: "topnav-bar",
   templateUrl: "./top-nav-bar.component.html"
 })
-export class TopNavBarComponent {
+export class TopNavBarComponent implements OnInit {
   showProfileMenu = false;
   showBasketMenu = false;
-  constructor() { }
+  pageState = UserPageState;
+  currentUser: string;
+  constructor(private userService: UserService) { }
 
+  ngOnInit() {
+    this.userService.currentUser
+      .subscribe((x: User) => {
+        this.currentUser = `${x.name} ${x.family}`
+      })
+  }
+
+  //#region Design
   toggleClicked(event: MouseEvent) {
     var body = $("body");
     var menu = $("#sidebar-menu");
@@ -32,17 +45,12 @@ export class TopNavBarComponent {
     body.toggleClass("nav-md nav-sm");
   }
 
-  ngOnInit() {
-    console.log("hello `topnavbar` component");
-  }
-
-  ngAfterViewInit() { }
-
   onClickProfile() {
     this.showProfileMenu = !this.showProfileMenu
   }
-  
+
   onClickBasket() {
     this.showBasketMenu = !this.showBasketMenu
   }
+  //#endregion
 }
