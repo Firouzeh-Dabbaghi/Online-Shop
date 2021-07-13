@@ -19,8 +19,8 @@
                       </div>
                       <div class="col-md-11">
                         <input type="text" class="form-control border-top-0 border-left-0 border-right-0"
-                          placeholder="Name" required minLength="10" maxlength="100" ngModel #name="ngModel"
-                          name="name">
+                          placeholder="Name" required minLength="10" maxlength="100" [(ngModel)]="user.name"
+                          #name="ngModel" name="name">
                       </div>
                     </div>
                   </div>
@@ -32,8 +32,8 @@
                       </div>
                       <div class="col-md-11">
                         <input type="text" class="form-control border-top-0 border-left-0 border-right-0"
-                          placeholder="Family" required minLength="10" maxlength="100" ngModel #family="ngModel"
-                          name="family">
+                          placeholder="Family" required minLength="10" maxlength="100" [(ngModel)]="user.family"
+                          #family="ngModel" name="family">
                       </div>
                     </div>
                   </div>
@@ -45,7 +45,8 @@
                       </div>
                       <div class="col-md-11">
                         <input type="email" class="form-control border-top-0 border-left-0 border-right-0"
-                          placeholder="Email" required maxlength="150" ngModel #email="ngModel" name="email" email="true">
+                          placeholder="Email" required maxlength="150" [(ngModel)]="user.email" #email="ngModel"
+                          name="email" email="true">
                       </div>
                     </div>
                   </div>
@@ -57,8 +58,8 @@
                       </div>
                       <div class="col-md-11">
                         <input type="date" class="form-control border-top-0 border-left-0 border-right-0"
-                          placeholder="Family" required minLength="10" maxlength="100" ngModel #family="ngModel"
-                          name="family">
+                          placeholder="Family" required minLength="10" maxlength="100" [(ngModel)]="user.birthDate"
+                          #birthDate="ngModel" name="birthDate">
                       </div>
                     </div>
                   </div>
@@ -69,8 +70,9 @@
                         <i class="fa fa-barcode  pt-3"></i>
                       </div>
                       <div class="col-md-11">
-                        <input type="postalCode" class="form-control border-top-0 border-left-0 border-right-0"
-                          placeholder="postal Code" required>
+                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0"
+                          placeholder="Postal Code" required [(ngModel)]="user.postalCode" #postalCode="ngModel"
+                          name="postalCode">
                       </div>
                     </div>
                   </div>
@@ -81,14 +83,18 @@
                         <i class="fa fa-map-marker pt-3"></i>
                       </div>
                       <div class="col-md-11">
-                        <textarea class="form-control border-top-0 border-left-0 border-right-0" name="address" 
-                         cols="30" rows="5" ngModel #address="ngModel" placeholder="address" required></textarea>
+                        <textarea class="form-control border-top-0 border-left-0 border-right-0" name="address"
+                          cols="30" rows="5" [(ngModel)]="user.address" #address="ngModel" placeholder="address"
+                          required></textarea>
                       </div>
                     </div>
                   </div>
 
                   <div class="text-center">
-                    <button type="submit" class="btn btn-danger" [disabled]="f.invalid">Sign Up</button>
+                    <button *ngIf="mode===userMode.SignUp" type="submit" class="btn btn-danger"
+                      [disabled]="f.invalid">Sign Up</button>
+                    <button *ngIf="mode===userMode.Edit" type="submit" class="btn btn-danger"
+                      [disabled]="f.invalid">Edit</button>
                   </div>
 
                 </form>
