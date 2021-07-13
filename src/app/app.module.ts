@@ -17,6 +17,8 @@ import { SlideshowModule } from 'ng-simple-slideshow';
 import { TopNavBarComponent } from './menu/top-nav-bar/top-nav-bar.component';
 import { UserComponent } from './user/user.component';
 import { UserService } from './user/user.service';
+import { LogOutComponent } from './user/log-out/log-out.component';
+import { LogInComponent } from './user/log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { UserService } from './user/user.service';
     LightboxComponent,
     UserComponent,
     ProfileComponent,
+    LogOutComponent,
+    LogInComponent,
   ],
   imports: [
     BrowserModule,
