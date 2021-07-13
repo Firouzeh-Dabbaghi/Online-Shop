@@ -3,19 +3,28 @@ import { RouterModule, Routes } from "@angular/router";
 import { ContentComponent } from "./content/content.component";
 import { NgModule } from "@angular/core";
 import { NoContentComponent } from "./global/no-content/no-content.component";
-import { SignUpComponent } from './user/sign-up/sign-up.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { UserComponent } from "./user/user.component";
 
 export const AppRoutes: Routes = [
-    { path: '', component: ContentComponent },
-    { path: 'sign-up',  component: SignUpComponent },
-    { path: '**', component: NoContentComponent }
-  ];
+  { path: '', component: ContentComponent },
+  { path: 'user', component: UserComponent },
+  {
+    path: 'profile', component: ProfileComponent, children: [
+      { path: ':id', component: UserComponent },
+      { path: ':id/:edit', component: UserComponent },
+      { path: ':id/log-out', component: UserComponent },
+      { path: ':id/orders', component: UserComponent },
+    ]
+  },
+  { path: '**', component: NoContentComponent }
+];
 
-  @NgModule({
-      imports:[RouterModule.forRoot(AppRoutes, { useHash: true })],
-      exports:[RouterModule]
-  })
-  
-export class AppRoutingModule{
+@NgModule({
+  imports: [RouterModule.forRoot(AppRoutes)],
+  exports: [RouterModule]
+})
+
+export class AppRoutingModule {
 
 }
