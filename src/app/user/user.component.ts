@@ -11,7 +11,7 @@ import { UserService } from './user.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  user = new User(null, '', '', '', '', '', null);
+  user = new User();
   pageState = UserPageState.SignUp;
   userMode = UserPageState
   constructor(
