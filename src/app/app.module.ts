@@ -11,10 +11,12 @@ import { LightboxModule } from 'ngx-lightbox';
 import { NgModule } from '@angular/core';
 import { NoContentComponent } from './global/no-content/no-content.component';
 import { ProductsService } from './products/products.service';
+import { ProfileComponent } from './user/profile/profile.component';
 import { SidebarComponent } from './menu/sidebar/sidebar.component';
-import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { TopNavBarComponent } from './menu/top-nav-bar/top-nav-bar.component';
+import { UserComponent } from './user/user.component';
+import { UserService } from './user/user.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { TopNavBarComponent } from './menu/top-nav-bar/top-nav-bar.component';
     Footer,
     CarouselComponent,
     LightboxComponent,
-    SignUpComponent
+    UserComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { TopNavBarComponent } from './menu/top-nav-bar/top-nav-bar.component';
     SlideshowModule,
     LightboxModule,
     AppRoutingModule],
-  providers: [ProductsService],
+  providers: [ProductsService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
