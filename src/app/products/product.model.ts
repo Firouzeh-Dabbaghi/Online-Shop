@@ -4,5 +4,7 @@ export class Product {
         public description: string,
         public imagePath: string,
         public date: string,
-        public price: string ) { }
+        public price: string,
+        public view: number
+    ) { }
 }
