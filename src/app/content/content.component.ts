@@ -14,8 +14,8 @@ export class ContentComponent {
   constructor(private productsService:ProductsService) { }
 
   ngOnInit() {
-    this.mostVisited = this.productsService.getProductImagesUrl();
-    this.latestVisited = this.productsService.getProducts();
+    this.mostVisited = this.productsService.getMostVisitedProducts();
+    this.latestVisited = this.productsService.getlastProduct();
   }
 
 }
