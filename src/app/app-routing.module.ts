@@ -1,15 +1,17 @@
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 
-import { ContentComponent } from "./content/content.component";
+import { AllProductsComponent } from './products/all-products/all-products.component';
+import { ContentComponent } from './content/content.component';
 import { LogInComponent } from './user/log-in/log-in.component';
 import { LogOutComponent } from './user/log-out/log-out.component';
-import { NgModule } from "@angular/core";
-import { NoContentComponent } from "./global/no-content/no-content.component";
+import { NgModule } from '@angular/core';
+import { NoContentComponent } from './global/no-content/no-content.component';
 import { ProfileComponent } from './user/profile/profile.component';
-import { UserComponent } from "./user/user.component";
+import { UserComponent } from './user/user.component';
 
 export const AppRoutes: Routes = [
   { path: '', component: ContentComponent },
+  { path: 'all-product', component: AllProductsComponent },
   { path: 'user/:pageState', component: UserComponent },
   { path: 'log-in', component: LogInComponent },
   {
