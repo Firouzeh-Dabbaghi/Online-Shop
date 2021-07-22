@@ -19,6 +19,8 @@ import { UserComponent } from './user/user.component';
 import { UserService } from './user/user.service';
 import { LogOutComponent } from './user/log-out/log-out.component';
 import { LogInComponent } from './user/log-in/log-in.component';
+import { AllProductsComponent } from './products/all-products/all-products.component';
+import { FilterPipe } from './shared/pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { LogInComponent } from './user/log-in/log-in.component';
     ProfileComponent,
     LogOutComponent,
     LogInComponent,
+    AllProductsComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,7 @@ import { LogInComponent } from './user/log-in/log-in.component';
     SlideshowModule,
     LightboxModule,
     AppRoutingModule],
-  providers: [ProductsService,UserService],
+  providers: [ProductsService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
